@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#260b17">
+  <meta name="description" content="A little birthday surprise made with love.">
+  <title>A Little Place for Chels ♡</title>
+  <style>
+    :root{--bg:#160810;--panel:#260e1a;--wine:#5b1732;--rose:#d98ca6;--pale:#f6dce5;--muted:#c9aab6;--line:rgba(246,220,229,.15);--serif:Georgia,'Times New Roman',serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#4a172b 0,transparent 38%),radial-gradient(ellipse at 90% 60%,#351023 0,transparent 34%),var(--bg);color:#fff3f6;font-family:var(--sans);min-height:100vh}button,input{font:inherit}.hidden{display:none!important}
+    .glow{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.glow:before,.glow:after{content:'✦';position:absolute;color:#e7a8bd;opacity:.17;font-size:24px;animation:float 9s ease-in-out infinite}.glow:before{top:15%;left:8%}.glow:after{right:9%;bottom:16%;animation-delay:-4s}@keyframes float{50%{transform:translateY(-24px) rotate(22deg);opacity:.35}}
+    main{position:relative;z-index:1;width:min(100% - 32px,1000px);margin:auto;padding:28px 0 55px}.screen{min-height:90vh;display:grid;place-items:center}.panel{width:min(100%,470px);padding:38px 28px;text-align:center;background:linear-gradient(145deg,rgba(95,29,55,.55),rgba(35,12,25,.84));border:1px solid var(--line);border-radius:28px;box-shadow:0 28px 90px #0007;backdrop-filter:blur(14px);animation:rise .8s ease both}.eyebrow{text-transform:uppercase;letter-spacing:.24em;font-size:.68rem;color:#e8a9bf}.seal{width:58px;height:58px;border:1px solid #d98ca655;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;color:#f0b9cb;font:30px var(--serif)}h1,h2,h3{font-family:var(--serif);font-weight:400}h1{font-size:clamp(2.7rem,8vw,4.4rem);line-height:1.04;margin:16px 0 12px}h2{font-size:clamp(2rem,5vw,3rem);margin:10px 0}p{color:#e4cbd4;line-height:1.8}.panel p{font-size:.95rem}.pass{width:100%;margin:14px 0 12px;padding:15px;border-radius:14px;border:1px solid #d98ca655;background:#16081088;color:white;text-align:center;letter-spacing:.35em;font-size:1.15rem;outline:none}.pass:focus{border-color:var(--rose);box-shadow:0 0 0 3px #d98ca622}.btn{border:1px solid #e6a5bb55;border-radius:999px;padding:13px 23px;color:#fff;background:linear-gradient(110deg,#8a294b,#5b1732);cursor:pointer;box-shadow:0 8px 26px #4a102b55;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.13)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.error{min-height:22px;color:#ffb5c8;font-size:.83rem}.tiny{font-size:.78rem;color:#b995a4}
+    .topline{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 2px 24px;color:#c9aab6;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}.hero{text-align:center;padding:30px 0 18px}.hero h1{margin:14px 0 8px}.hero p{max-width:540px;margin:0 auto}.divider{width:70px;height:1px;background:linear-gradient(90deg,transparent,#d98ca6,transparent);margin:24px auto 30px}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 62px}.photo{position:relative;padding:0;border:1px solid #f5dce522;border-radius:18px;overflow:hidden;background:#321321;aspect-ratio:3/4;cursor:pointer;box-shadow:0 12px 30px #0004;transition:transform .25s,border-color .25s}.photo:hover{transform:translateY(-5px) rotate(-.5deg);border-color:#e6a5bb99}.photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .5s,filter .4s;filter:saturate(.94)}.photo:hover img{transform:scale(1.045);filter:saturate(1.08)}.photo:after{content:'♡';position:absolute;right:11px;bottom:8px;color:#fff;font:22px var(--serif);text-shadow:0 2px 10px #000}
+    .section{text-align:center;padding:24px 0 54px}.countbox{margin:26px auto 18px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.unit{min-width:78px;padding:14px 10px;border:1px solid var(--line);border-radius:16px;background:#ffffff09}.unit strong{display:block;font:2rem var(--serif);color:#fff}.unit span{display:block;margin-top:4px;color:#d99ab0;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase}.note{font-size:.82rem;color:#b995a4}.letter{max-width:700px;margin:24px auto 0;padding:clamp(24px,5vw,42px);border:1px solid #e6a5bb44;border-radius:24px;background:linear-gradient(145deg,#4a172b99,#1d0c16ee);text-align:left;box-shadow:0 20px 70px #0005}.letter h2{text-align:center;margin:0 0 24px}.letter p{color:#f0dce3;line-height:1.9;margin:0 0 15px}.signature{text-align:center!important;color:#f0b5c9!important;font-family:var(--serif);font-size:1.2rem;margin-top:24px!important}.footer{text-align:center;padding:20px 0;color:#9d7888;font-size:.75rem;letter-spacing:.08em}
+    .lightbox{position:fixed;inset:0;background:#090308ed;z-index:10;display:grid;place-items:center;padding:20px}.lightbox img{max-width:min(92vw,700px);max-height:84vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 80px #000}.close{position:absolute;top:18px;right:20px;border:1px solid #fff5;background:#ffffff14;color:#fff;border-radius:50%;width:42px;height:42px;font-size:22px;cursor:pointer}
+    #confetti{position:fixed;inset:0;pointer-events:none;z-index:20}.letter-reveal{animation:rise .9s ease both}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .letter-stage{position:fixed;inset:0;z-index:30;display:grid;place-items:center;background:rgba(10,3,8,.88);backdrop-filter:blur(9px);padding:20px;perspective:1200px}.envelope-wrap{width:min(88vw,430px);height:290px;position:relative;display:grid;place-items:end center;animation:stageIn .45s ease both}.envelope{position:absolute;bottom:0;width:100%;height:220px;background:linear-gradient(145deg,#8a294b,#4a142b);border-radius:8px 8px 18px 18px;box-shadow:0 24px 70px #0009;overflow:visible}.envelope:before,.envelope:after{content:'';position:absolute;bottom:0;width:0;height:0;border-style:solid;z-index:4}.envelope:before{left:0;border-width:110px 215px 0 0;border-color:transparent #6e1e3d transparent transparent}.envelope:after{right:0;border-width:110px 0 0 215px;border-color:transparent transparent transparent #7a2143}.env-flap{position:absolute;top:0;left:0;width:0;height:0;border-left:215px solid transparent;border-right:215px solid transparent;border-top:135px solid #a43b5e;transform-origin:top;z-index:6;transition:transform .85s ease}.env-heart{position:absolute;z-index:7;top:72px;left:50%;transform:translateX(-50%);font-size:32px;color:#ffe5ed;text-shadow:0 2px 12px #310819}.paper{position:absolute;left:5%;bottom:12px;width:90%;height:205px;padding:24px 18px;background:#fff4f6;color:#63213a;border-radius:7px;text-align:center;z-index:3;display:grid;align-content:center;box-shadow:0 5px 25px #0004;transition:transform 1.15s cubic-bezier(.2,.8,.2,1),height 1s}.paper strong{font:1.6rem Georgia,serif}.paper span{font-size:.78rem;color:#96516a;margin-top:8px}.letter-stage.opening .env-flap{transform:rotateX(180deg);z-index:1}.letter-stage.opening .paper{transform:translateY(-155px);height:235px}.letter-stage.opening .env-heart{opacity:0;transition:opacity .2s}.stage-caption{position:absolute;top:calc(50% + 170px);width:100%;text-align:center;color:#f2c5d3;letter-spacing:.12em;font-size:.72rem;text-transform:uppercase}.letter-stage .close-stage{position:absolute;top:20px;right:20px;background:#ffffff12;color:white;border:1px solid #ffffff44;border-radius:50%;width:42px;height:42px;font-size:22px;cursor:pointer}.letter-stage{cursor:pointer}.letter-stage .envelope-wrap{cursor:default}@keyframes stageIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);gap:12px}.photo{border-radius:15px}.topline{font-size:.61rem}.unit{min-width:68px}.unit strong{font-size:1.7rem}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div><canvas id="confetti"></canvas>
+  <main>
+    <section id="gate" class="screen">
+      <div class="panel">
+        <div class="seal">♡</div><div class="eyebrow">A little place made just for you</div>
+        <h1>Just for you,<br><span style="color:#e6a5bb">Chels</span></h1>
+        <p>Some memories deserve their own little corner. Enter the year we met to open your surprise.</p>
+        <form id="passForm"><input class="pass" id="passcode" type="password" inputmode="numeric" maxlength="4" placeholder="YEAR WE MET" aria-label="Passcode" autocomplete="off"><button class="btn" type="submit">Unlock our memories&nbsp; ♡</button><div id="error" class="error" role="status"></div></form>
+        <div class="tiny">Made with love, one memory at a time.</div>
+      </div>
+    </section>
+
+    <section id="inside" class="hidden">
+      <div class="topline"><span>Our little collection</span><span>♡ made with love</span></div>
+      <header class="hero"><div class="eyebrow">A few moments, a thousand feelings</div><h1>My favorite memories</h1><p>Every picture holds a little moment worth keeping. And somehow, every one of them makes me smile.</p><div class="divider"></div></header>
+      <div class="gallery" aria-label="Photo gallery">
+        <button class="photo" data-photo="assets/memory-01.jpg" aria-label="Open memory photo 1"><img src="assets/memory-01.jpg" alt="A favorite photo" loading="lazy"></button>
+        <button class="photo" data-photo="assets/memory-02.jpg" aria-label="Open memory photo 2"><img src="assets/memory-02.jpg" alt="A favorite photo" loading="lazy"></button>
+        <button class="photo" data-photo="assets/memory-03.jpg" aria-label="Open memory photo 3"><img src="assets/memory-03.jpg" alt="A favorite photo" loading="lazy"></button>
+        <button class="photo" data-photo="assets/memory-04.jpg" aria-label="Open memory photo 4"><img src="assets/memory-04.jpg" alt="A favorite photo" loading="lazy"></button>
+        <button class="photo" data-photo="assets/memory-05.jpg" aria-label="Open memory photo 5"><img src="assets/memory-05.jpg" alt="A favorite photo" loading="lazy"></button>
+        <button class="photo" data-photo="assets/memory-06.jpg" aria-label="Open memory photo 6"><img src="assets/memory-06.jpg" alt="A favorite photo" loading="lazy"></button>
+        <button class="photo" data-photo="assets/memory-07.jpg" aria-label="Open memory photo 7"><img src="assets/memory-07.jpg" alt="A favorite photo" loading="lazy"></button>
+        <button class="photo" data-photo="assets/memory-08.jpg" aria-label="Open memory photo 8"><img src="assets/memory-08.jpg" alt="A favorite photo" loading="lazy"></button>
+      </div>
+      <section class="section" id="countSection"><div class="eyebrow">The countdown to your special day</div><h2>Almost time, birthday girl</h2><p>There's one more little surprise waiting for midnight.</p>
+        <div class="countbox" aria-live="polite"><div class="unit"><strong id="days">--</strong><span>Days</span></div><div class="unit"><strong id="hours">--</strong><span>Hours</span></div><div class="unit"><strong id="minutes">--</strong><span>Minutes</span></div><div class="unit"><strong id="seconds">--</strong><span>Seconds</span></div></div>
+        <button id="openLetter" class="btn hidden">Open your birthday letter&nbsp; ♡</button><div id="lockedNote" class="note">Your birthday letter is waiting for midnight. ♡</div>
+      </section>
+      <section id="birthdayLetter" class="section hidden"><div class="eyebrow">A little letter, just for you</div><div class="letter letter-reveal"><h2>Happy Birthday, My Love ❤️</h2>
+        <p>Today is all about you, and I hope you know just how special you are to me.</p>
+        <p>I don't think you fully understand how much happiness you bring into my life. Sometimes I may not have the perfect words to express how I feel, but I hope the little things I do remind you that you mean so much to me.</p>
+        <p>Meeting you is one of those beautiful things I never planned for but am genuinely grateful happened. Your smile, your laugh, your little ways of making ordinary moments feel special — I wouldn't trade them for anything.</p>
+        <p>As you begin another year of your life, I wish you endless happiness, peace, success, and every beautiful thing your heart deserves. I hope this year brings you closer to all your dreams, and I hope I get to be there cheering you on through it all.</p>
+        <p>Thank you for being you, Chels. Never forget how loved, appreciated, and special you are.</p>
+        <p class="signature">Happy Birthday, my beautiful girl. ❤️<br>With all my love. 💋</p>
+      </div></section>
+      <div class="footer">Made especially for you&nbsp; ♡</div>
+    </section>
+  </main>
+  <div id="letterStage" class="letter-stage hidden" aria-label="Opening birthday letter"><button class="close-stage" id="closeStage" aria-label="Close">×</button><div class="envelope-wrap"><div class="paper"><strong>For Chels, with love ♡</strong><span>A little birthday letter, made just for you…</span></div><div class="envelope"><div class="env-flap"></div><div class="env-heart">♡</div></div></div><div class="stage-caption" id="stageCaption">A little something from my heart</div></div>
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="close" id="closeLightbox" aria-label="Close photo">×</button><img id="lightboxImage" src="" alt="Enlarged memory"></div>
+<script>
+  // Personal settings: passcode is the year you met; birthday unlock is midnight in Liberia (UTC).
+  const PASSCODE = '2026';
+  const BIRTHDAY_AT = new Date('2026-11-04T00:00:00Z');
+  const $ = id => document.getElementById(id);
+  $('passForm').addEventListener('submit', event => {
+    event.preventDefault();
+    if ($('passcode').value.trim() === PASSCODE) {
+      $('gate').classList.add('hidden'); $('inside').classList.remove('hidden');
+      updateCountdown(); window.scrollTo({top:0,behavior:'smooth'});
+    } else { $('error').textContent = 'Not quite — try the year we met again. ♡'; $('passcode').select(); }
+  });
+  function unlockLetter(){
+    $('openLetter').classList.remove('hidden'); $('lockedNote').classList.add('hidden');
+  }
+  function updateCountdown(){
+    const remaining = BIRTHDAY_AT.getTime() - Date.now();
+    if(remaining <= 0){ ['days','hours','minutes','seconds'].forEach(id => $(id).textContent='00'); unlockLetter(); return; }
+    const d=Math.floor(remaining/86400000), h=Math.floor(remaining%86400000/3600000), m=Math.floor(remaining%3600000/60000), s=Math.floor(remaining%60000/1000);
+    $('days').textContent=String(d).padStart(2,'0'); $('hours').textContent=String(h).padStart(2,'0'); $('minutes').textContent=String(m).padStart(2,'0'); $('seconds').textContent=String(s).padStart(2,'0');
+    setTimeout(updateCountdown,1000);
+  }
+  $('openLetter').addEventListener('click',()=>{ $('openLetter').classList.add('hidden'); $('letterStage').classList.remove('hidden'); setTimeout(()=>{ $('letterStage').classList.add('opening'); $('stageCaption').textContent='Opening your letter…'; },450); setTimeout(()=>{ $('letterStage').classList.add('hidden'); $('letterStage').classList.remove('opening'); $('birthdayLetter').classList.remove('hidden'); $('birthdayLetter').scrollIntoView({behavior:'smooth'}); celebrate(); },2100); });
+  $('closeStage').addEventListener('click',e=>{e.stopPropagation();$('letterStage').classList.add('hidden');$('letterStage').classList.remove('opening');$('openLetter').classList.remove('hidden')});
+  document.querySelectorAll('.photo').forEach(button=>button.addEventListener('click',()=>{ $('lightboxImage').src=button.dataset.photo; $('lightbox').classList.remove('hidden'); }));
+  function closePhoto(){ $('lightbox').classList.add('hidden'); $('lightboxImage').src=''; }
+  $('closeLightbox').addEventListener('click',closePhoto); $('lightbox').addEventListener('click',e=>{if(e.target===$('lightbox'))closePhoto()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closePhoto()});
+  function celebrate(){
+    const c=$('confetti'),ctx=c.getContext('2d'); c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);
+    const bits=Array.from({length:130},()=>({x:Math.random()*innerWidth,y:-20-Math.random()*innerHeight*.5,r:2+Math.random()*4,v:2+Math.random()*4,a:Math.random()*6.28,spin:(Math.random()-.5)*.15}));let frame=0;
+    function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);bits.forEach(b=>{b.y+=b.v;b.x+=Math.sin(b.a+=b.spin)*1.5;ctx.save();ctx.translate(b.x,b.y);ctx.rotate(b.a);ctx.fillStyle=['#e9a8bd','#f6dce5','#a94e70','#ffffff'][Math.floor(Math.random()*4)];ctx.fillRect(-b.r,-b.r,b.r*2,b.r*2);ctx.restore()});if(++frame<180)requestAnimationFrame(draw);else ctx.clearRect(0,0,innerWidth,innerHeight)}draw();
+  }
+</script>
+</body>
+</html>
